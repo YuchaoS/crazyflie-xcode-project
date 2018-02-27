@@ -29,8 +29,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		415824172045C1E50006C55B /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/build/Debug/xcode"; sourceTree = "<absolute>"; };
 		415824192045C2690006C55B /* crazyflie-firmware */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "crazyflie-firmware"; sourceTree = "<group>"; };
+		41A67C482045C3540062E7E5 /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/build/Debug/xcode"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +100,7 @@
 			);
 			name = xcode;
 			productName = xcode;
-			productReference = 415824172045C1E50006C55B /* xcode */;
+			productReference = 41A67C482045C3540062E7E5 /* xcode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
