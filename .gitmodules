@@ -1,3 +1,3 @@
 [submodule "crazyflie-firmware"]
-	path = crazyflie-firmware
+	path = submodules/crazyflie-firmware
 	url = https://github.com/bitcraze/crazyflie-firmware
