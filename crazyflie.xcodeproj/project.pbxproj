@@ -274,7 +274,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		41FF5F55204ED9EC00781B33 /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/build/Debug/xcode"; sourceTree = "<absolute>"; };
 		41FF5F5C204EECA600781B33 /* InterruptsInEclipse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InterruptsInEclipse; sourceTree = "<group>"; };
 		41FF5F5E204EECA600781B33 /* enable_trace.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enable_trace.cfg; sourceTree = "<group>"; };
 		41FF5F5F204EECA600781B33 /* decodeItm.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = decodeItm.py; sourceTree = "<group>"; };
@@ -801,6 +800,7 @@
 		41FF61B8204EECA600781B33 /* deck_constants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_constants.c; sourceTree = "<group>"; };
 		41FF61B9204EECA600781B33 /* deck_spi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_spi.c; sourceTree = "<group>"; };
 		41FF61BA204EECA600781B33 /* deck_digital.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_digital.c; sourceTree = "<group>"; };
+		41FF62AD204EEF7B00781B33 /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xcode; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -818,6 +818,7 @@
 			isa = PBXGroup;
 			children = (
 				41FF5F59204EECA600781B33 /* crazyflie-firmware */,
+				41FF62AD204EEF7B00781B33 /* xcode */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2068,7 +2069,7 @@
 			);
 			name = xcode;
 			productName = xcode;
-			productReference = 41FF5F55204ED9EC00781B33 /* xcode */;
+			productReference = 41FF62AD204EEF7B00781B33 /* xcode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -2481,6 +2482,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PATH = "/usr/local/opt/python@2/bin:$PATH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2492,6 +2494,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
+				PATH = "/usr/local/opt/python@2/bin:$PATH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
