@@ -1298,6 +1298,13 @@
 			remoteGlobalIDString = 41DF40242045AC6E009FB84A;
 			remoteInfo = crazyflie;
 		};
+		41FF7FED204F019100781B33 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 41DF40202045AC6D009FB84A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 41DF40242045AC6E009FB84A;
+			remoteInfo = crazyflie;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -17619,6 +17626,21 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = cload;
 		};
+		41FF7FEB204F019100781B33 /* warm cload */ = {
+			isa = PBXLegacyTarget;
+			buildArgumentsString = "cload CLOAD_CMDS=\"-w radio://0/90/2M/E7E7E7E7E7\" ";
+			buildConfigurationList = 41FF7FEE204F019100781B33 /* Build configuration list for PBXLegacyTarget "warm cload" */;
+			buildPhases = (
+			);
+			buildToolPath = /usr/bin/make;
+			buildWorkingDirectory = "submodules/crazyflie-firmware";
+			dependencies = (
+				41FF7FEC204F019100781B33 /* PBXTargetDependency */,
+			);
+			name = "warm cload";
+			passBuildSettingsInEnvironment = 1;
+			productName = cload;
+		};
 /* End PBXLegacyTarget section */
 
 /* Begin PBXNativeTarget section */
@@ -17660,6 +17682,9 @@
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
+					41FF7FEB204F019100781B33 = {
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 41DF40232045AC6D009FB84A /* Build configuration list for PBXProject "crazyflie" */;
@@ -17676,6 +17701,7 @@
 			targets = (
 				41DF40242045AC6E009FB84A /* crazyflie */,
 				41DF61E32045B452009FB84A /* cload */,
+				41FF7FEB204F019100781B33 /* warm cload */,
 				41DF402D2045B029009FB84A /* xcode */,
 			);
 		};
@@ -18935,6 +18961,11 @@
 			target = 41DF40242045AC6E009FB84A /* crazyflie */;
 			targetProxy = 41DF61E72045B4FA009FB84A /* PBXContainerItemProxy */;
 		};
+		41FF7FEC204F019100781B33 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 41DF40242045AC6E009FB84A /* crazyflie */;
+			targetProxy = 41FF7FED204F019100781B33 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -19139,6 +19170,31 @@
 			};
 			name = Release;
 		};
+		41FF7FEF204F019100781B33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUGGING_SYMBOLS = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		41FF7FF0204F019100781B33 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -19174,6 +19230,15 @@
 			buildConfigurations = (
 				41DF61E52045B453009FB84A /* Debug */,
 				41DF61E62045B453009FB84A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		41FF7FEE204F019100781B33 /* Build configuration list for PBXLegacyTarget "warm cload" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				41FF7FEF204F019100781B33 /* Debug */,
+				41FF7FF0204F019100781B33 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
