@@ -17626,10 +17626,10 @@
 			passBuildSettingsInEnvironment = 1;
 			productName = cload;
 		};
-		41FF7FEB204F019100781B33 /* warm cload */ = {
+		41FF7FEB204F019100781B33 /* warmCload */ = {
 			isa = PBXLegacyTarget;
 			buildArgumentsString = "cload CLOAD_CMDS=\"-w radio://0/90/2M/E7E7E7E7E7\" ";
-			buildConfigurationList = 41FF7FEE204F019100781B33 /* Build configuration list for PBXLegacyTarget "warm cload" */;
+			buildConfigurationList = 41FF7FEE204F019100781B33 /* Build configuration list for PBXLegacyTarget "warmCload" */;
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
@@ -17637,7 +17637,7 @@
 			dependencies = (
 				41FF7FEC204F019100781B33 /* PBXTargetDependency */,
 			);
-			name = "warm cload";
+			name = warmCload;
 			passBuildSettingsInEnvironment = 1;
 			productName = cload;
 		};
@@ -17701,7 +17701,7 @@
 			targets = (
 				41DF40242045AC6E009FB84A /* crazyflie */,
 				41DF61E32045B452009FB84A /* cload */,
-				41FF7FEB204F019100781B33 /* warm cload */,
+				41FF7FEB204F019100781B33 /* warmCload */,
 				41DF402D2045B029009FB84A /* xcode */,
 			);
 		};
@@ -19234,7 +19234,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		41FF7FEE204F019100781B33 /* Build configuration list for PBXLegacyTarget "warm cload" */ = {
+		41FF7FEE204F019100781B33 /* Build configuration list for PBXLegacyTarget "warmCload" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41FF7FEF204F019100781B33 /* Debug */,
