@@ -1320,7 +1320,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		41FF62AD204EEF7B00781B33 /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/build/Debug/xcode"; sourceTree = "<absolute>"; };
+		41562C192055D8D200F698E9 /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xcode; sourceTree = BUILT_PRODUCTS_DIR; };
 		41FF62B1204EF0DA00781B33 /* InterruptsInEclipse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InterruptsInEclipse; sourceTree = "<group>"; };
 		41FF62B3204EF0DA00781B33 /* enable_trace.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enable_trace.cfg; sourceTree = "<group>"; };
 		41FF62B4204EF0DA00781B33 /* decodeItm.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = decodeItm.py; sourceTree = "<group>"; };
@@ -6950,6 +6950,7 @@
 			isa = PBXGroup;
 			children = (
 				41FF62AE204EF0DA00781B33 /* crazyflie-firmware */,
+				41562C192055D8D200F698E9 /* xcode */,
 			);
 			sourceTree = "<group>";
 		};
@@ -17658,7 +17659,7 @@
 			);
 			name = xcode;
 			productName = xcode;
-			productReference = 41FF62AD204EEF7B00781B33 /* xcode */;
+			productReference = 41562C192055D8D200F698E9 /* xcode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -19076,7 +19077,6 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PATH = "/usr/local/opt/python@2/bin:$PATH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -19088,7 +19088,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "";
-				PATH = "/usr/local/opt/python@2/bin:$PATH";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
