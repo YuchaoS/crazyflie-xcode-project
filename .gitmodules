@@ -1,3 +1,6 @@
 [submodule "submodules/crazyflie-firmware"]
 	path = submodules/crazyflie-firmware
 	url = https://github.com/acecilia/crazyflie-firmware
+[submodule "submodules/lps-node-firmware"]
+	path = submodules/lps-node-firmware
+	url = https://github.com/bitcraze/lps-node-firmware.git

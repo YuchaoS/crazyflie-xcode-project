@@ -1886,6 +1886,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		4110033D2059DC7100680ACB /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/xcode/build/Debug/xcode"; sourceTree = "<absolute>"; };
 		414BB3792059A85C00BDAA59 /* InterruptsInEclipse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InterruptsInEclipse; sourceTree = "<group>"; };
 		414BB37B2059A85C00BDAA59 /* enable_trace.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enable_trace.cfg; sourceTree = "<group>"; };
 		414BB37C2059A85C00BDAA59 /* decodeItm.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = decodeItm.py; sourceTree = "<group>"; };
@@ -8026,7 +8027,6 @@
 		414BCDE92059A86B00BDAA59 /* deck_constants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_constants.c; sourceTree = "<group>"; };
 		414BCDEA2059A86B00BDAA59 /* deck_spi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_spi.c; sourceTree = "<group>"; };
 		414BCDEB2059A86B00BDAA59 /* deck_digital.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_digital.c; sourceTree = "<group>"; };
-		41BAF2C52059A8ED0066DD15 /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/xcode/build/Debug/xcode"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -19786,7 +19786,7 @@
 			);
 			name = xcode;
 			productName = xcode;
-			productReference = 41BAF2C52059A8ED0066DD15 /* xcode */;
+			productReference = 4110033D2059DC7100680ACB /* xcode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -19796,7 +19796,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
-				ORGANIZATIONNAME = Andres;
+				ORGANIZATIONNAME = bitcraze;
 				TargetAttributes = {
 					41DF40242045AC6E009FB84A = {
 						CreatedOnToolsVersion = 9.2;
@@ -19815,7 +19815,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 41DF40232045AC6D009FB84A /* Build configuration list for PBXProject "crazyflie" */;
+			buildConfigurationList = 41DF40232045AC6D009FB84A /* Build configuration list for PBXProject "crazyflie-firmware" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -21470,7 +21470,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		41DF40232045AC6D009FB84A /* Build configuration list for PBXProject "crazyflie" */ = {
+		41DF40232045AC6D009FB84A /* Build configuration list for PBXProject "crazyflie-firmware" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				41DF40252045AC6E009FB84A /* Debug */,

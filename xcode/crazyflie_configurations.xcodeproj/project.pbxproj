@@ -25,6 +25,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = bitcraze;
 			};
 			buildConfigurationList = 414BB3702059A73E00BDAA59 /* Build configuration list for PBXProject "crazyflie_configurations" */;
 			compatibilityVersion = "Xcode 8.0";

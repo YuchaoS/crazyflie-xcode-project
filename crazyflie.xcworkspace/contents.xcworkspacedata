@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:xcode/crazyflie.xcodeproj">
+      location = "group:xcode/crazyflie-firmware.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:xcode/crazyflie_configurations.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:xcode/lps-node-firmware.xcodeproj">
    </FileRef>
 </Workspace>

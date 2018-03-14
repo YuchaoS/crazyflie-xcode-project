@@ -1,6 +1,8 @@
 # To set in the config.mk file inside the crazyflie project:
 # -include ../../configurations/config.mk
 
+CFLAGS += -DLPS_TWR_ENABLE
+
 ## Copy this file to config.mk and modify to get you personal build configuration
 
 ## Set CRTP link to E-SKY receiver
