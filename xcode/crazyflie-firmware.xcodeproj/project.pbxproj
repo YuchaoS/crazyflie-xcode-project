@@ -1561,6 +1561,7 @@
 		41102BA82059E06900680ACB /* deck_constants.c in Sources */ = {isa = PBXBuildFile; fileRef = 411025962059E06300680ACB /* deck_constants.c */; };
 		41102BA92059E06900680ACB /* deck_spi.c in Sources */ = {isa = PBXBuildFile; fileRef = 411025972059E06300680ACB /* deck_spi.c */; };
 		41102BAA2059E06900680ACB /* deck_digital.c in Sources */ = {isa = PBXBuildFile; fileRef = 411025982059E06300680ACB /* deck_digital.c */; };
+		41F1D6AC20616BC000943DC4 /* lpsTwrSwarmTag.c in Sources */ = {isa = PBXBuildFile; fileRef = 41DAD48F205AD72E00CFE15E /* lpsTwrSwarmTag.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1593,7 +1594,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4110033D2059DC7100680ACB /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/xcode/build/Debug/xcode"; sourceTree = "<absolute>"; };
 		41100C4F2059E05700680ACB /* InterruptsInEclipse */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = InterruptsInEclipse; sourceTree = "<group>"; };
 		41100C512059E05700680ACB /* enable_trace.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = enable_trace.cfg; sourceTree = "<group>"; };
 		41100C522059E05700680ACB /* decodeItm.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = decodeItm.py; sourceTree = "<group>"; };
@@ -7437,6 +7437,9 @@
 		411025962059E06300680ACB /* deck_constants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_constants.c; sourceTree = "<group>"; };
 		411025972059E06300680ACB /* deck_spi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_spi.c; sourceTree = "<group>"; };
 		411025982059E06300680ACB /* deck_digital.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_digital.c; sourceTree = "<group>"; };
+		41DAD48D205AD6DA00CFE15E /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = xcode; sourceTree = BUILT_PRODUCTS_DIR; };
+		41DAD48F205AD72E00CFE15E /* lpsTwrSwarmTag.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lpsTwrSwarmTag.c; sourceTree = "<group>"; };
+		41DAD491205AD77A00CFE15E /* lpsTwrSwarmTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lpsTwrSwarmTag.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -18617,6 +18620,7 @@
 			children = (
 				411025732059E06300680ACB /* outlierFilter.h */,
 				411025742059E06300680ACB /* lpsTwrTag.h */,
+				41DAD491205AD77A00CFE15E /* lpsTwrSwarmTag.h */,
 				411025752059E06300680ACB /* locodeck.h */,
 				411025762059E06300680ACB /* usddeck.h */,
 				411025772059E06300680ACB /* zranger.h */,
@@ -18642,6 +18646,7 @@
 				411025872059E06300680ACB /* flowdeck.c */,
 				411025882059E06300680ACB /* buzzdeck.c */,
 				411025892059E06300680ACB /* lpsTwrTag.c */,
+				41DAD48F205AD72E00CFE15E /* lpsTwrSwarmTag.c */,
 				4110258A2059E06300680ACB /* locodeck.c */,
 				4110258B2059E06300680ACB /* oa.c */,
 				4110258C2059E06300680ACB /* cppmdeck.c */,
@@ -18685,6 +18690,7 @@
 			isa = PBXGroup;
 			children = (
 				41100C4C2059E05700680ACB /* crazyflie-firmware */,
+				41DAD48D205AD6DA00CFE15E /* xcode */,
 			);
 			sourceTree = "<group>";
 		};
@@ -18752,7 +18758,7 @@
 			);
 			name = xcode;
 			productName = xcode;
-			productReference = 4110033D2059DC7100680ACB /* xcode */;
+			productReference = 41DAD48D205AD6DA00CFE15E /* xcode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -19702,6 +19708,7 @@
 				41102B952059E06900680ACB /* lpsTdoaTag.c in Sources */,
 				411028962059E06600680ACB /* arm_var_f32.c in Sources */,
 				41102B3A2059E06800680ACB /* startup_stm32f10x_ld.s in Sources */,
+				41F1D6AC20616BC000943DC4 /* lpsTwrSwarmTag.c in Sources */,
 				41102ABD2059E06800680ACB /* template_fixture_tests.c in Sources */,
 				41102A502059E06700680ACB /* Main.c in Sources */,
 				411029062059E06600680ACB /* system_ARMCM0.c in Sources */,
