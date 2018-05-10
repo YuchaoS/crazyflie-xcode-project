@@ -226,7 +226,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		411003422059DD2D00680ACB /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/xcode/build/Debug/xcode"; sourceTree = "<absolute>"; };
 		411008AE2059DF5600680ACB /* eeprom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = eeprom.h; sourceTree = "<group>"; };
 		411008AF2059DF5600680ACB /* dwOps.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dwOps.h; sourceTree = "<group>"; };
 		411008B02059DF5600680ACB /* port.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = port.h; sourceTree = "<group>"; };
@@ -832,6 +831,7 @@
 		41100B7D2059DF5700680ACB /* test_support.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_support.c; sourceTree = "<group>"; };
 		41100B7E2059DF5700680ACB /* bootmode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = bootmode.c; sourceTree = "<group>"; };
 		41100B7F2059DF5700680ACB /* uwb_tdoa_anchor2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = uwb_tdoa_anchor2.c; sourceTree = "<group>"; };
+		416A360620A46B3700E564AA /* xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = xcode; path = "/Users/andres/Git/crazyflie-xcode-project/xcode/build/Debug/xcode"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2443,7 +2443,7 @@
 			);
 			name = xcode;
 			productName = xcode;
-			productReference = 411003422059DD2D00680ACB /* xcode */;
+			productReference = 416A360620A46B3700E564AA /* xcode */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
