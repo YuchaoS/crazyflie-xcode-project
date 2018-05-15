@@ -2,7 +2,7 @@
 # -include ../../configurations/config.mk
 
 # CFLAGS += -E
-CFLAGS += -DLPS_TWR_SWARM_ENABLE
+# CFLAGS += -DLPS_TWR_SWARM_ENABLE
 
 ## Copy this file to config.mk and modify to get you personal build configuration
 
