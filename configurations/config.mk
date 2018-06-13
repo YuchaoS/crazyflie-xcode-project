@@ -5,6 +5,8 @@
 CFLAGS += -DLPS_TWR_SWARM_ENABLE
 CFLAGS += -DLPS_TWR_SWARM_DEBUG_ENABLE
 
+# DEBUG=1
+
 ## Copy this file to config.mk and modify to get you personal build configuration
 
 ## Set CRTP link to E-SKY receiver

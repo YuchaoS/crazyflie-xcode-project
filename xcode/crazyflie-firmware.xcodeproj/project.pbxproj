@@ -2036,6 +2036,9 @@
 		414F6D4C20C3542F0008278A /* deck_constants.c in Sources */ = {isa = PBXBuildFile; fileRef = 414F655F20C354230008278A /* deck_constants.c */; };
 		414F6D4D20C3542F0008278A /* deck_spi.c in Sources */ = {isa = PBXBuildFile; fileRef = 414F656020C354230008278A /* deck_spi.c */; };
 		414F6D4E20C3542F0008278A /* deck_digital.c in Sources */ = {isa = PBXBuildFile; fileRef = 414F656120C354230008278A /* deck_digital.c */; };
+		4158D0AF20C706F800728334 /* clockCorrectionEngine.c in Sources */ = {isa = PBXBuildFile; fileRef = 4158D0AE20C706F800728334 /* clockCorrectionEngine.c */; };
+		4158D0B520C72B9C00728334 /* clockCorrectionFunctions.c in Sources */ = {isa = PBXBuildFile; fileRef = 4158D0B420C72B9C00728334 /* clockCorrectionFunctions.c */; };
+		4158D0B720C73FDD00728334 /* TestClockCorrection.c in Sources */ = {isa = PBXBuildFile; fileRef = 4158D0B620C73FDD00728334 /* TestClockCorrection.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -8485,6 +8488,12 @@
 		414F655F20C354230008278A /* deck_constants.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_constants.c; sourceTree = "<group>"; };
 		414F656020C354230008278A /* deck_spi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_spi.c; sourceTree = "<group>"; };
 		414F656120C354230008278A /* deck_digital.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = deck_digital.c; sourceTree = "<group>"; };
+		4158D0AD20C706F800728334 /* clockCorrectionEngine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clockCorrectionEngine.h; sourceTree = "<group>"; };
+		4158D0AE20C706F800728334 /* clockCorrectionEngine.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = clockCorrectionEngine.c; sourceTree = "<group>"; };
+		4158D0B220C72ABB00728334 /* clockCorrectionStorage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clockCorrectionStorage.h; sourceTree = "<group>"; };
+		4158D0B320C72B9C00728334 /* clockCorrectionFunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = clockCorrectionFunctions.h; sourceTree = "<group>"; };
+		4158D0B420C72B9C00728334 /* clockCorrectionFunctions.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = clockCorrectionFunctions.c; sourceTree = "<group>"; };
+		4158D0B620C73FDD00728334 /* TestClockCorrection.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = TestClockCorrection.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -9317,6 +9326,7 @@
 			children = (
 				414F4A1D20C354010008278A /* TestLpsSwarmTag.c */,
 				414F4A1E20C354010008278A /* TestLpsTwrTag.c */,
+				4158D0B620C73FDD00728334 /* TestClockCorrection.c */,
 				414F4A1F20C354010008278A /* TestLpsTdoa2Tag.c */,
 				414F4A2020C354010008278A /* TestOutlierFilter.c */,
 				414F4A2120C354010008278A /* TestLpsSwarmTagBlocks.c */,
@@ -19834,6 +19844,7 @@
 		414F639820C354210008278A /* interface */ = {
 			isa = PBXGroup;
 			children = (
+				4158D0B120C72A7200728334 /* clockCorrection */,
 				414F639920C354210008278A /* crc_bosch.h */,
 				414F639A20C354210008278A /* debug.h */,
 				414F639B20C354210008278A /* version.h */,
@@ -19852,6 +19863,7 @@
 		414F63A420C354210008278A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				4158D0B020C72A6200728334 /* clockCorrection */,
 				414F63A520C354210008278A /* FreeRTOS-openocd.c */,
 				414F63A620C354210008278A /* configblockflash.c */,
 				414F63A720C354210008278A /* eprintf.c */,
@@ -20551,14 +20563,11 @@
 		414F652A20C354220008278A /* interface */ = {
 			isa = PBXGroup;
 			children = (
+				41AFE33E20C8988600605ED8 /* TwrSwarm */,
 				414F652B20C354220008278A /* outlierFilter.h */,
-				414F652C20C354220008278A /* TwrSwarmAlgorithmBlocks.h */,
-				414F652D20C354220008278A /* lpsTwrTag.h */,
 				414F652E20C354220008278A /* locodeck.h */,
-				414F652F20C354220008278A /* lpsTwrSwarmTag.h */,
+				414F652D20C354220008278A /* lpsTwrTag.h */,
 				414F653020C354220008278A /* usddeck.h */,
-				414F653120C354220008278A /* TwrSwarmAlgorithm.h */,
-				414F653220C354220008278A /* TwrSwarmDebug.h */,
 				414F653320C354220008278A /* zranger.h */,
 				414F653420C354230008278A /* lpsTdoaTagEngine.h */,
 				414F653520C354230008278A /* ledring12.h */,
@@ -20575,12 +20584,11 @@
 		414F653C20C354230008278A /* src */ = {
 			isa = PBXGroup;
 			children = (
+				41AFE33D20C8981D00605ED8 /* TwrSwarm */,
 				414F653D20C354230008278A /* rzr.c */,
 				414F653E20C354230008278A /* usddeck.c */,
 				414F653F20C354230008278A /* lpsTdoaTagEngine.c */,
-				414F654020C354230008278A /* TwrSwarmDebug.c */,
 				414F654120C354230008278A /* bigquad.c */,
-				414F654220C354230008278A /* TwrSwarmAlgorithm.c */,
 				414F654320C354230008278A /* zranger.c */,
 				414F654420C354230008278A /* test */,
 				414F654720C354230008278A /* lpsTdoa2Tag.c */,
@@ -20588,14 +20596,12 @@
 				414F654920C354230008278A /* zranger2.c */,
 				414F654A20C354230008278A /* ledring12.c */,
 				414F654B20C354230008278A /* lpsTdoa3Tag.c */,
-				414F654C20C354230008278A /* TwrSwarmAlgorithmBlocks.c */,
 				414F654D20C354230008278A /* outlierFilter.c */,
 				414F654E20C354230008278A /* flowdeck_v1v2.c */,
 				414F654F20C354230008278A /* multiranger.c */,
 				414F655020C354230008278A /* buzzdeck.c */,
 				414F655120C354230008278A /* lpsTwrTag.c */,
 				414F655220C354230008278A /* locodeck.c */,
-				414F655320C354230008278A /* lpsTwrSwarmTag.c */,
 				414F655420C354230008278A /* oa.c */,
 				414F655520C354230008278A /* cppmdeck.c */,
 				414F655620C354230008278A /* gtgps.c */,
@@ -20632,6 +20638,47 @@
 				414F656120C354230008278A /* deck_digital.c */,
 			);
 			path = api;
+			sourceTree = "<group>";
+		};
+		4158D0B020C72A6200728334 /* clockCorrection */ = {
+			isa = PBXGroup;
+			children = (
+				4158D0AE20C706F800728334 /* clockCorrectionEngine.c */,
+				4158D0B420C72B9C00728334 /* clockCorrectionFunctions.c */,
+			);
+			path = clockCorrection;
+			sourceTree = "<group>";
+		};
+		4158D0B120C72A7200728334 /* clockCorrection */ = {
+			isa = PBXGroup;
+			children = (
+				4158D0B220C72ABB00728334 /* clockCorrectionStorage.h */,
+				4158D0B320C72B9C00728334 /* clockCorrectionFunctions.h */,
+				4158D0AD20C706F800728334 /* clockCorrectionEngine.h */,
+			);
+			path = clockCorrection;
+			sourceTree = "<group>";
+		};
+		41AFE33D20C8981D00605ED8 /* TwrSwarm */ = {
+			isa = PBXGroup;
+			children = (
+				414F655320C354230008278A /* lpsTwrSwarmTag.c */,
+				414F654220C354230008278A /* TwrSwarmAlgorithm.c */,
+				414F654C20C354230008278A /* TwrSwarmAlgorithmBlocks.c */,
+				414F654020C354230008278A /* TwrSwarmDebug.c */,
+			);
+			path = TwrSwarm;
+			sourceTree = "<group>";
+		};
+		41AFE33E20C8988600605ED8 /* TwrSwarm */ = {
+			isa = PBXGroup;
+			children = (
+				414F652F20C354220008278A /* lpsTwrSwarmTag.h */,
+				414F653120C354220008278A /* TwrSwarmAlgorithm.h */,
+				414F652C20C354220008278A /* TwrSwarmAlgorithmBlocks.h */,
+				414F653220C354220008278A /* TwrSwarmDebug.h */,
+			);
+			path = TwrSwarm;
 			sourceTree = "<group>";
 		};
 		41DF401F2045AC6D009FB84A = {
@@ -20822,6 +20869,7 @@
 				414F660920C354270008278A /* platform_cf2.o.d in Sources */,
 				414F693D20C354290008278A /* TestProductionCode2.c in Sources */,
 				414F6AF320C3542B0008278A /* arm_fir_example_f32.c in Sources */,
+				4158D0AF20C706F800728334 /* clockCorrectionEngine.c in Sources */,
 				414F6A4920C3542A0008278A /* arm_negate_q31.c in Sources */,
 				414F663320C354270008278A /* estimator.o.d in Sources */,
 				414F6C2E20C3542D0008278A /* TestProductionCode2_Runner.c in Sources */,
@@ -21122,6 +21170,7 @@
 				414F69FE20C3542A0008278A /* arm_lms_q31.c in Sources */,
 				414F69BE20C354290008278A /* arm_fir_sparse_init_f32.c in Sources */,
 				414F69C820C354290008278A /* arm_correlate_fast_q15.c in Sources */,
+				4158D0B520C72B9C00728334 /* clockCorrectionFunctions.c in Sources */,
 				414F6AD420C3542B0008278A /* system_ARMCM3.c in Sources */,
 				414F6C4E20C3542D0008278A /* bmi055_gyro.c in Sources */,
 				414F6CE420C3542E0008278A /* stm32f4xx_syscfg.c in Sources */,
@@ -21304,6 +21353,7 @@
 				414F69FF20C3542A0008278A /* arm_conv_fast_q15.c in Sources */,
 				414F681A20C354280008278A /* testsample_cmd.c in Sources */,
 				414F695F20C354290008278A /* GPDMA_LPC18xx.c in Sources */,
+				4158D0B720C73FDD00728334 /* TestClockCorrection.c in Sources */,
 				414F6BBC20C3542C0008278A /* TestMain.c in Sources */,
 				414F6B5920C3542B0008278A /* HAL_CM3.c in Sources */,
 				414F6AB820C3542A0008278A /* startup_ARMCM3.s in Sources */,
