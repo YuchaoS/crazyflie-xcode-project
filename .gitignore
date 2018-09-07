@@ -1,4 +1,6 @@
 python/venv/*
+plotter/venv/*
+plotter/cache/*
 
 ## Xcode project user settings
 xcuserdata/
