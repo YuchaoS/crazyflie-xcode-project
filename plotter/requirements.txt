@@ -1,3 +1,4 @@
 cflib
 pyqtgraph
 PyQt5
+PyOpenGL
