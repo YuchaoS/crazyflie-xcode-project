@@ -47,34 +47,42 @@ if __name__ == '__main__':
     cflib.crtp.init_drivers(enable_debug_driver=False)
 
     # Configure info to log
-    lg_stab = LogConfig(name='twrSwarm', period_in_ms=60)
+    lg_stab = LogConfig(name='twrSwarm', period_in_ms=40)
     lg_stab.add_variable('twrSwarm.xPosition', 'float')
     lg_stab.add_variable('twrSwarm.yPosition', 'float')
 
-    lg_stab.add_variable('twrSwarm.xPosition0', 'float')
-    lg_stab.add_variable('twrSwarm.yPosition0', 'float')
-
-    lg_stab.add_variable('twrSwarm.xPosition1', 'float')
-    lg_stab.add_variable('twrSwarm.yPosition1', 'float')
+    lg_stab.add_variable('twrSwarm.iPositionN', 'uint8_t')
+    lg_stab.add_variable('twrSwarm.xPositionN', 'float')
+    lg_stab.add_variable('twrSwarm.yPositionN', 'float')
 
     # lg_stab = LogConfig(name='Stabilizer', period_in_ms=20)
     # lg_stab.add_variable('stabilizer.roll', 'float')
 
-    c1 = plt.plot(pen='b', symbol='o', symbolPen='b', symbolBrush='b', name='blue')
-    c2 = plt.plot(pen='r', symbol='o', symbolPen='r', symbolBrush='r', name='red')
-    c3 = plt.plot(pen='g', symbol='o', symbolPen='g', symbolBrush='g', name='green')
+    mainQ = plt.plot(symbol='o', symbolPen='g', symbolBrush='g', name='MainQuadcopter')
+    n0 = plt.plot(symbol='o', symbolPen='r', symbolBrush='r', name='Neighbour1')
+    n1 = plt.plot(symbol='o', symbolPen='b', symbolBrush='b', name='Neighbour2')
+    n2 = plt.plot(symbol='o', symbolPen='y', symbolBrush='y', name='Neighbour3')
+    # plt.plot(pen='y', symbol='o', symbolPen='y', symbolBrush='y', name='Neighbour3')
 
     with SyncCrazyflie(URI, cf=Crazyflie(rw_cache='./cache')) as scf:
         with SyncLogger(scf, lg_stab) as logger:
             for log_entry in logger:                    
                 data = log_entry[1]
-                setData(c1, data['twrSwarm.xPosition'], data['twrSwarm.yPosition'])
-                setData(c2, data['twrSwarm.xPosition0'], data['twrSwarm.yPosition0'])
-                setData(c3, data['twrSwarm.xPosition1'], data['twrSwarm.yPosition1'])
-                # setData(c1, data['stabilizer.roll'], 0)
 
-                # timestamp = log_entry[0]
-                # print('[%d]: %s' % (timestamp, data))
+                setData(mainQ, data['twrSwarm.xPosition'], data['twrSwarm.yPosition'])
+                
+                neighbourIndex = data['twrSwarm.iPositionN']
+                neighbourx = data['twrSwarm.xPositionN']
+                neighboury = data['twrSwarm.yPositionN']
+                # neighbourz = data['twrSwarm.zPositionN']
+                if neighbourIndex == 0:
+                    setData(n0, neighbourx, neighboury)
+                elif neighbourIndex == 1:
+                    setData(n1, neighbourx, neighboury)
+                elif neighbourIndex == 2:
+                    setData(n2, neighbourx, neighboury)
+                else:
+                    raise NameError('Drone not identified')
 
                 if select.select([sys.stdin,],[],[],0.0)[0]:
                     termios.tcflush(sys.stdin, termios.TCIOFLUSH)
