@@ -20,6 +20,7 @@ mainQuadcopter = "mainQuadcopter"
 neighbour1 = "neighbour1"
 neighbour2 = "neighbour2"
 neighbour3 = "neighbour3"
+neighbour4 = "neighbour4"
 
 URI = 'radio://0/100/2M'
 
@@ -29,7 +30,7 @@ class Visualizer(object):
         self.app = QtGui.QApplication(sys.argv)
         self.w = gl.GLViewWidget()
         self.w.orbit(45 + 180, 90) # Place like 2D
-        self.w.opts['distance'] = 40
+        self.w.opts['distance'] = 3
         self.w.setWindowTitle('pyqtgraph example: GLLinePlotItem')
         self.w.setGeometry(0, 0, 800, 800)
         self.w.show()
@@ -47,7 +48,7 @@ class Visualizer(object):
         # gz.translate(0, 0, -10)
         # self.w.addItem(gz)
         gx = gl.GLGridItem()
-        gx.translate(0, 0, -2)
+        gx.translate(0, 0, -1)
         self.w.addItem(gx)
 
         # Create the axis
@@ -64,6 +65,7 @@ class Visualizer(object):
         self.traces[neighbour1] = gl.GLScatterPlotItem(pos=np.empty(shape=(1,3)), color=(1, 0, 0, 1))
         self.traces[neighbour2] = gl.GLScatterPlotItem(pos=np.empty(shape=(1,3)), color=(0, 0, 1, 1))
         self.traces[neighbour3] = gl.GLScatterPlotItem(pos=np.empty(shape=(1,3)), color=(1, 1, 0, 1))
+        self.traces[neighbour4] = gl.GLScatterPlotItem(pos=np.empty(shape=(1,3)), color=(1, 0, 1, 1))
 
         for key, value in self.traces.items():
             self.w.addItem(value)
@@ -84,46 +86,52 @@ if __name__ == '__main__':
 
     # Initialize the low-level drivers (don't list the debug drivers)
     cflib.crtp.init_drivers(enable_debug_driver=False)
+    available = cflib.crtp.scan_interfaces()
+    if len(available) > 0:
 
-    # Configure info to log
-    lg_stab = LogConfig(name='twrSwarm', period_in_ms=100)
-    lg_stab.add_variable('twrSwarm.xPosition', 'float')
-    lg_stab.add_variable('twrSwarm.yPosition', 'float')
-    lg_stab.add_variable('twrSwarm.zPosition', 'float')
+        # Configure info to log
+        lg_stab = LogConfig(name='twrSwarm', period_in_ms=100)
+        lg_stab.add_variable('twrSwarm.xPosition', 'float')
+        lg_stab.add_variable('twrSwarm.yPosition', 'float')
+        lg_stab.add_variable('twrSwarm.zPosition', 'float')
 
-    lg_stab.add_variable('twrSwarm.iPositionN', 'uint8_t')
-    lg_stab.add_variable('twrSwarm.xPositionN', 'float')
-    lg_stab.add_variable('twrSwarm.yPositionN', 'float')
-    lg_stab.add_variable('twrSwarm.zPositionN', 'float')
+        lg_stab.add_variable('twrSwarm.iPositionN', 'uint8_t')
+        lg_stab.add_variable('twrSwarm.xPositionN', 'float')
+        lg_stab.add_variable('twrSwarm.yPositionN', 'float')
+        lg_stab.add_variable('twrSwarm.zPositionN', 'float')
 
-    # lg_stab = LogConfig(name='Stabilizer', period_in_ms=20)
-    # lg_stab.add_variable('stabilizer.roll', 'float')
+        # lg_stab = LogConfig(name='Stabilizer', period_in_ms=20)
+        # lg_stab.add_variable('stabilizer.roll', 'float')
 
-    with SyncCrazyflie(URI, cf=Crazyflie(rw_cache='./cache')) as scf:
-        with SyncLogger(scf, lg_stab) as logger:
-            for log_entry in logger:                    
-                data = log_entry[1]
+        with SyncCrazyflie(URI, cf=Crazyflie(rw_cache='./cache')) as scf:
+            with SyncLogger(scf, lg_stab) as logger:
+                for log_entry in logger:                    
+                    data = log_entry[1]
 
-                v.set_plotdata(name=mainQuadcopter, points=[data['twrSwarm.xPosition'], data['twrSwarm.yPosition'], data['twrSwarm.zPosition']]) 
-                
-                neighbourIndex = data['twrSwarm.iPositionN']
-                if neighbourIndex == 0:
-                    name = neighbour1
-                elif neighbourIndex == 1:
-                    name = neighbour2
-                elif neighbourIndex == 2:
-                    name = neighbour3
-                else:
-                    raise NameError('Drone not identified')
+                    v.set_plotdata(name=mainQuadcopter, points=[data['twrSwarm.xPosition'], data['twrSwarm.yPosition'], data['twrSwarm.zPosition']]) 
+                    
+                    neighbourIndex = data['twrSwarm.iPositionN']
+                    if neighbourIndex == 0:
+                        name = neighbour1
+                    elif neighbourIndex == 1:
+                        name = neighbour2
+                    elif neighbourIndex == 2:
+                        name = neighbour3
+                    elif neighbourIndex == 3:
+                        name = neighbour4
+                    else:
+                        raise NameError('Drone not identified')
 
-                neighbourx = data['twrSwarm.xPositionN']
-                neighboury = data['twrSwarm.yPositionN']
-                neighbourz = data['twrSwarm.zPositionN']
-                v.set_plotdata(name=name, points=[neighbourx, neighboury, neighbourz]) 
+                    neighbourx = data['twrSwarm.xPositionN']
+                    neighboury = data['twrSwarm.yPositionN']
+                    neighbourz = data['twrSwarm.zPositionN']
+                    v.set_plotdata(name=name, points=[neighbourx, neighboury, neighbourz]) 
 
-                if select.select([sys.stdin,],[],[],0.0)[0]:
-                    termios.tcflush(sys.stdin, termios.TCIOFLUSH)
-                    break
+                    if select.select([sys.stdin,],[],[],0.0)[0]:
+                        termios.tcflush(sys.stdin, termios.TCIOFLUSH)
+                        break
+    else:
+        print('No Crazyflies found, finishing...')
 
 input("Press Enter to finish...")
     

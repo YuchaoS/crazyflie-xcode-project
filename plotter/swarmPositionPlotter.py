@@ -62,6 +62,7 @@ if __name__ == '__main__':
     n0 = plt.plot(symbol='o', symbolPen='r', symbolBrush='r', name='Neighbour1')
     n1 = plt.plot(symbol='o', symbolPen='b', symbolBrush='b', name='Neighbour2')
     n2 = plt.plot(symbol='o', symbolPen='y', symbolBrush='y', name='Neighbour3')
+    n3 = plt.plot(symbol='o', symbolPen='p', symbolBrush='p', name='Neighbour4')
     # plt.plot(pen='y', symbol='o', symbolPen='y', symbolBrush='y', name='Neighbour3')
 
     with SyncCrazyflie(URI, cf=Crazyflie(rw_cache='./cache')) as scf:
@@ -81,6 +82,8 @@ if __name__ == '__main__':
                     setData(n1, neighbourx, neighboury)
                 elif neighbourIndex == 2:
                     setData(n2, neighbourx, neighboury)
+                elif neighbourIndex == 3:
+                    setData(n3, neighbourx, neighboury)
                 else:
                     raise NameError('Drone not identified')
 
