@@ -15,6 +15,8 @@ import sys
 
 import sys, termios
 import select
+import time
+import threading
 
 mainQuadcopter = "mainQuadcopter"
 neighbour1 = "neighbour1"
@@ -24,15 +26,26 @@ neighbour4 = "neighbour4"
 
 URI = 'radio://0/100/2M'
 
+def rotateTo3D(visualizer):
+    elements = 500
+    h = 0 / elements
+    v = -80 / elements
+    visualizer.gaxis.setSize(size=QtGui.QVector3D(10, 10, 10))
+    for _ in range(elements):
+        time.sleep(5/elements)
+        visualizer.w.orbit(h, v)
+        pg.QtGui.QApplication.processEvents()
+
 class Visualizer(object):
     def __init__(self):
         self.traces = dict()
         self.app = QtGui.QApplication(sys.argv)
         self.w = gl.GLViewWidget()
         self.w.orbit(45 + 180, 90) # Place like 2D
-        self.w.opts['distance'] = 3
+        self.w.pan(1, 1, 0.5)
+        self.w.opts['distance'] = 5
         self.w.setWindowTitle('pyqtgraph example: GLLinePlotItem')
-        self.w.setGeometry(0, 0, 800, 800)
+        self.w.setGeometry(0, 0, 1280, 800)
         self.w.show()
 
         # create the background grids
@@ -52,8 +65,8 @@ class Visualizer(object):
         self.w.addItem(gx)
 
         # Create the axis
-        gaxis = gl.GLAxisItem(size=QtGui.QVector3D(10, 10, 10))
-        self.w.addItem(gaxis)
+        self.gaxis = gl.GLAxisItem(size=QtGui.QVector3D(10, 10, 0))
+        self.w.addItem(self.gaxis)
 
         # self.n = 50
         # self.m = 1000
@@ -83,6 +96,7 @@ logging.basicConfig(level=logging.ERROR)
 
 if __name__ == '__main__':
     v = Visualizer()
+    detected3D = False
 
     # Initialize the low-level drivers (don't list the debug drivers)
     cflib.crtp.init_drivers(enable_debug_driver=False)
@@ -119,6 +133,11 @@ if __name__ == '__main__':
                         name = neighbour3
                     elif neighbourIndex == 3:
                         name = neighbour4
+                        if detected3D == False:
+                            detected3D = True
+                            timer = threading.Timer(5.0, rotateTo3D, args=([v]))
+                            timer.daemon = True # Daemonize thread
+                            timer.start() 
                     else:
                         raise NameError('Drone not identified')
 
@@ -133,5 +152,4 @@ if __name__ == '__main__':
     else:
         print('No Crazyflies found, finishing...')
 
-input("Press Enter to finish...")
-    
+input("Press Enter to finish...")    

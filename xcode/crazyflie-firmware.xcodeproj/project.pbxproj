@@ -6680,7 +6680,6 @@
 		41F413BF211C857500CAC519 /* platform_cf2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = platform_cf2.c; sourceTree = "<group>"; };
 		41F413C2211C857500CAC519 /* crc_bosch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crc_bosch.h; sourceTree = "<group>"; };
 		41F413C4211C857500CAC519 /* clockCorrectionEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clockCorrectionEngine.h; sourceTree = "<group>"; };
-		41F413C5211C857500CAC519 /* clockCorrectionFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clockCorrectionFunctions.h; sourceTree = "<group>"; };
 		41F413C6211C857500CAC519 /* clockCorrectionStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = clockCorrectionStorage.h; sourceTree = "<group>"; };
 		41F413C7211C857500CAC519 /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
 		41F413C8211C857500CAC519 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
@@ -17423,7 +17422,6 @@
 			isa = PBXGroup;
 			children = (
 				41F413C4211C857500CAC519 /* clockCorrectionEngine.h */,
-				41F413C5211C857500CAC519 /* clockCorrectionFunctions.h */,
 				41F413C6211C857500CAC519 /* clockCorrectionStorage.h */,
 			);
 			path = clockCorrection;
@@ -18218,10 +18216,10 @@
 		41F41579211C857600CAC519 /* TwrSwarm */ = {
 			isa = PBXGroup;
 			children = (
-				41F4157A211C857600CAC519 /* TwrSwarmAlgorithmBlocks.h */,
 				41F4157B211C857600CAC519 /* lpsTwrSwarmTag.h */,
-				41F4157C211C857600CAC519 /* TwrSwarmDump.h */,
 				41F4157D211C857600CAC519 /* TwrSwarmAlgorithm.h */,
+				41F4157A211C857600CAC519 /* TwrSwarmAlgorithmBlocks.h */,
+				41F4157C211C857600CAC519 /* TwrSwarmDump.h */,
 				41F4157E211C857600CAC519 /* TwrSwarmDebug.h */,
 			);
 			path = TwrSwarm;
